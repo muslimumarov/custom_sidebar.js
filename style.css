@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.navigation {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  width: 70px;
+  border-radius: 10px;
+  box-sizing: initial;
+  border-left: 5px solid #5285e7;
+  background-color: #5285e7;
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+
+.navigation.active {
+  width: 300px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 75px;
+}
+
+.navigation ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.tooltip {
+  display: none;
+  position: fixed;
+  left: 117px;
+  background-color: #000000;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #050000;
+  transform: rotateZ(45deg);
+  top: 10px;
+  left: -4px;
+}
+
+.list:hover .tooltip {
+  display: block;
+}
+
+.navigation ul li.active {
+  background-color: #3461cc;
+}
+
+.navigation ul li b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #3461cc;
+  display: none;
+}
+
+.navigation ul li b:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  /* //787557 */
+  background: #5e84e0;
+}
+
+.navigation ul li b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #3461cc;
+  display: none;
+}
+
+.navigation ul li b:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  background: #5e84e0;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: white;
+}
+
+.navigation ul li.active a {
+  color: white;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: normal;
+}
+
+.toggle {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  float: left;
+}
+
+.m-soft {
+  color: white;
+  font-size: 25px;
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 17px;
+}
+
+.toggle.active {
+  left: 270px
+}
+
+.toggle ion-icon {
+  position: absolute;
+  color: white;
+  font-size: 34px;
+  display: none;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+  display: block;
+}
+
+.toggle ion-icon.close,
+.toggle.active ion-icon.open {
+  display: none;
+}
+
+.navigation:not(.active) .list:hover .tooltip {
+  display: block;
+}
+.navigation.active .list .tooltip {
+  display: none;
+}
